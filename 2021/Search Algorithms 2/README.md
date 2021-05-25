@@ -19,6 +19,6 @@ This program implements the following search algorithms:
 
 The program will use those algorithms to find a solution for the following problem:
 * n-queens problem
-	-You have an n x n sized chees board, with n queens placed all in the first row. Your goal is to place the queens such that no queen is attacking another on the board.
+	-You have an n x n sized chess board, with n queens placed all in the first row. Your goal is to place the queens such that no queen is attacking another on the board.
 
 All source code is contained in a single file: Program.cs

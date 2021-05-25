@@ -24,6 +24,6 @@ The program will use those algorithms to find solutions for the following proble
 	-You have a square puzzle with n pieces (such that n+1 is a square number) and can only move one piece at a time. Your goal is to put the pieces in sequential order.
 	-Note that when defining n in the user input, this program takes it very literally. Ensure that n+1 is a square number, and not the size of the board like in the n-queens problem!
 * n-queens problem
-	-You have an n x n sized chees board, with n queens placed all in the first row. Your goal is to place the queens such that no queen is attacking another on the board.
+	-You have an n x n sized chess board, with n queens placed all in the first row. Your goal is to place the queens such that no queen is attacking another on the board.
 	
 All source code is contained in a single file: Program.cs
