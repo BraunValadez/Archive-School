@@ -1,0 +1,52 @@
+[gd_scene load_steps=7 format=2]
+
+[ext_resource path="res://Background.cs" type="Script" id=1]
+[ext_resource path="res://Square.tscn" type="PackedScene" id=2]
+
+[sub_resource type="SegmentShape2D" id=1]
+b = Vector2( 1024.38, -0.151718 )
+
+[sub_resource type="SegmentShape2D" id=2]
+b = Vector2( -0.585693, 601.92 )
+
+[sub_resource type="SegmentShape2D" id=3]
+a = Vector2( -0.0789108, 0.903381 )
+b = Vector2( 1026.64, 2.09155 )
+
+[sub_resource type="SegmentShape2D" id=4]
+b = Vector2( -1.49646, 600.249 )
+
+[node name="Background" type="Node"]
+script = ExtResource( 1 )
+SquareScene = ExtResource( 2 )
+
+[node name="BackgroundTimer" type="Timer" parent="."]
+wait_time = 3.0
+autostart = true
+
+[node name="WallN" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallN"]
+shape = SubResource( 1 )
+
+[node name="WallE" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallE"]
+position = Vector2( 1024.68, 0.654697 )
+shape = SubResource( 2 )
+
+[node name="WallS" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallS"]
+position = Vector2( -1.55261, 598.971 )
+shape = SubResource( 3 )
+
+[node name="WallW" type="StaticBody2D" parent="."]
+editor/display_folded = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="WallW"]
+shape = SubResource( 4 )
+[connection signal="timeout" from="BackgroundTimer" to="." method="_OnBackgroundTimerTimeout"]

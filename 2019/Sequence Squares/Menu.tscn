@@ -1,0 +1,110 @@
+[gd_scene load_steps=14 format=2]
+
+[ext_resource path="res://Menu.cs" type="Script" id=1]
+[ext_resource path="res://Main.tscn" type="PackedScene" id=2]
+[ext_resource path="res://Account.tscn" type="PackedScene" id=3]
+[ext_resource path="res://Scoreboard.tscn" type="PackedScene" id=4]
+[ext_resource path="res://Background.tscn" type="PackedScene" id=5]
+[ext_resource path="res://fonts/segoeprb.ttf" type="DynamicFontData" id=6]
+[ext_resource path="res://fonts/segoepr.ttf" type="DynamicFontData" id=7]
+
+[sub_resource type="DynamicFont" id=1]
+size = 64
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 6 )
+
+[sub_resource type="DynamicFont" id=2]
+size = 24
+outline_size = 5
+outline_color = Color( 0, 0, 0, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=3]
+size = 32
+outline_size = 5
+outline_color = Color( 0.203922, 0.203922, 0.203922, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=4]
+size = 32
+outline_size = 5
+outline_color = Color( 0.203922, 0.203922, 0.203922, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=5]
+size = 32
+outline_size = 5
+outline_color = Color( 0.203922, 0.203922, 0.203922, 1 )
+font_data = ExtResource( 7 )
+
+[sub_resource type="DynamicFont" id=6]
+size = 32
+outline_size = 5
+outline_color = Color( 0.203922, 0.203922, 0.203922, 1 )
+font_data = ExtResource( 7 )
+
+[node name="Menu" type="CanvasLayer"]
+script = ExtResource( 1 )
+Main = ExtResource( 2 )
+Account = ExtResource( 3 )
+Scoreboard = ExtResource( 4 )
+
+[node name="Background" parent="." instance=ExtResource( 5 )]
+
+[node name="TitleLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_right = 0.5
+margin_left = -281.0
+margin_right = 281.0
+margin_bottom = 112.0
+custom_fonts/font = SubResource( 1 )
+text = "Sequence Squares"
+
+[node name="AuthorLabel" type="Label" parent="."]
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+margin_left = -136.312
+margin_top = -189.504
+margin_right = 182.688
+margin_bottom = -147.504
+custom_fonts/font = SubResource( 2 )
+text = "A game by Braun Valadez"
+
+[node name="PlayButton" type="Button" parent="."]
+margin_left = 494.778
+margin_top = 178.022
+margin_right = 576.778
+margin_bottom = 240.022
+custom_fonts/font = SubResource( 3 )
+text = "Play"
+
+[node name="AccountButton" type="Button" parent="."]
+margin_left = 464.085
+margin_top = 276.241
+margin_right = 607.085
+margin_bottom = 338.241
+custom_fonts/font = SubResource( 4 )
+text = "Account"
+
+[node name="ScoreButton" type="Button" parent="."]
+margin_left = 440.758
+margin_top = 373.232
+margin_right = 632.758
+margin_bottom = 435.232
+custom_fonts/font = SubResource( 5 )
+text = "Scoreboard"
+
+[node name="QuitButton" type="Button" parent="."]
+margin_left = 493.551
+margin_top = 483.729
+margin_right = 575.551
+margin_bottom = 545.729
+custom_fonts/font = SubResource( 6 )
+text = "Quit"
+[connection signal="pressed" from="PlayButton" to="." method="_OnPlayButtonPressed"]
+[connection signal="pressed" from="AccountButton" to="." method="_OnAccountButtonPressed"]
+[connection signal="pressed" from="ScoreButton" to="." method="_OnScoreButtonPressed"]
+[connection signal="pressed" from="QuitButton" to="." method="_OnQuitButtonPressed"]
